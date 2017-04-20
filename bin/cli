@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+/**
+ * @project   console
+ * @link      https://git.setl.ru/console
+ * @author    Monzon Traore <monzon@traore.ru>
+ * @copyright Copyright 2017 Monzon Traore
+ */
+
+// set to run indefinitely if needed
+set_time_limit(0);
+
+/* Optional. It’s better to do it in the php.ini file */
+date_default_timezone_set('Europe/Moscow');
+
+(@include_once __DIR__ . '/../vendor/autoload.php') || @include_once __DIR__ . '/../../../autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$app = new Application();
+
+$app->addCommands([
+    new monzon\cliapp\Commands\DummyCommand(),
+    new monzon\cliapp\Commands\FileListCommand(),
+    new monzon\cliapp\Commands\FibonacciCommand(),
+    new monzon\cliapp\Commands\FunCommand(),
+]);
+
+$app->run();
