@@ -1,0 +1,22 @@
+{
+  "name": "sample/console",
+  "description": "Console application",
+  "minimum-stability": "stable",
+  "license": "project",
+  "authors": [
+    {
+      "name": "Monzon Traore",
+      "email": "monzon@traore.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "monzon\\cliapp\\": "src"
+    }
+  },
+  "require": {
+    "symfony/console": "^3.2",
+    "symfony/filesystem": "*",
+    "symfony/finder": "^3.2"
+  }
+}
